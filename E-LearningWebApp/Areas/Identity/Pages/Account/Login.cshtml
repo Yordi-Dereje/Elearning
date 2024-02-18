@@ -1,0 +1,93 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-signin-client_id" content="https://541998120443-r63t976v0513u8k9plbq4hcft5ag6694.apps.googleusercontent.com">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/content/logincss/login.css">
+    <script src="~/content/logincss/login.js"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+
+</head>
+<body>
+
+    <div class="container myflex">
+        <!-- <div class="newcustom"></div> -->
+        <div class="row py-5 mt-4 align-items-center ">
+            <!-- For Demo Purpose -->
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                <img src="~/content/logincss/logo.PNG" alt="" class="img" style="padding-left: 30px;">
+                <h1 style="padding-left: 20px; font-weight: bold;">Admission Portal</h1>
+                <p class="font-italic text-muted mb-0" style="padding-left: 20px; display: flex; justify-content: center; align-items: center">
+                    Welcome! Start your application by creating your account, you can do this by filling out the form, or via Google or GitHub directly.
+                    If you already have an account, please click the "Log in" button to access your account.
+                </p>
+            </div>
+            <!-- Login Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form id="account" method="post">
+                    <div class="row">
+                        <h5 style="padding-left: 30%; font-weight: bold; padding-bottom: 3%;">Sign In to your Account</h5>
+                        <!-- Email Address -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-envelope text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="email" type="email" name="email" placeholder="Email Address" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Password -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-lock text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="password" type="password" name="password" placeholder="Password" class="form-control bg-white border-left-0 border-md">
+                        </div>
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button id="login-submit" type="submit" class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Login</span>
+                                
+                            </button>
+                        </div>
+                        <!-- Divider Text -->
+                        <div class="form-group col-lg-12 mx-auto d-flex align-items-center my-4">
+                            <div class="border-bottom w-100 ml-5"></div>
+                            <span class="px-2 small text-muted font-weight-bold text-muted">OR</span>
+                            <div class="border-bottom w-100 mr-5"></div>
+                     
+                        </div>
+                        @* <a class="get-started-btn" asp-controller="Admin" asp-action="Index">Admin</a> *@
+
+                        <!-- Already Registered -->
+                        <div class="text-center w-100">
+                            <p class="text-muted font-weight-bold">Not registered yet? <a href="Register" class="text-primary ml-2">Register</a></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

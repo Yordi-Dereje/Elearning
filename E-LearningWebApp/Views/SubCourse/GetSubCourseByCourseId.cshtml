@@ -1,0 +1,54 @@
+﻿@model IEnumerable<E_LearningWebApp.Models.SubCourses>
+
+@{
+    ViewData["Title"] = "GetSubCourseByCourseId";
+}
+
+<h1>GetSubCourseByCourseId</h1>
+
+<p>
+    <a asp-action="CreateSubCourse">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCourseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCourseDuration)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Course)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCourseDescription)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SubCourseDuration)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.CourseCode)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SubCourseId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SubCourseId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SubCourseId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

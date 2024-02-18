@@ -1,0 +1,107 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+
+@{
+    ViewData["Title"] = "Certificate";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .certificate {
+            background-image: url('~/css/bg.jpg'); /* Replace with the path or URL of your image */
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Set the desired height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff; /* Set text color for better visibility */
+            padding: 20px;
+            border: 2px solid #008000;
+            border-radius: 10px;
+            width: 80%;
+            height: 80%;
+            text-align: center;
+            /* font-size: 1.2em; */
+        }
+
+        .certification h1 {
+            font-size: 30px;
+            color: #008000;
+        }
+
+        .certification h2 {
+            font-size: 27px;
+            color: #008000;
+        }
+
+        .certification p {
+            font-size: 24px;
+            color: #000000;
+        }
+    </style>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Your HTML content goes here -->
+    <button id="btnPdf" class="btn btn-primary">Generate PDF</button>
+    <div id="pdfContainer" style="text-align:center;">
+        <!-- ... rest of your HTML content ... -->
+        <div class="logo">
+            <!-- Replace with your institution's logo -->
+            <img src="~/css/logo.jpg" alt="Institution Logo">
+        </div>
+
+        <div class="border"></div>
+        <div class="certification">
+            <h1>Certification of Completion</h1>
+            <p>This is to certify that</p>
+            <h2 id="name">[Name]</h2>
+            <p>has successfully completed the</p>
+            <h2 id="course">[Course Name]</h2>
+            <p>at Temari Learning Institution.</p>
+            <br />
+            <h4>Thank you for being a part of our Learning System</h4>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.js"></script>
+
+    <script type="text/javascript">
+        $("#btnPdf").click(function () {
+            var element = document.getElementById("pdfContainer");
+
+            // Use html2pdf library to convert HTML to PDF
+            html2pdf(element);
+
+            // Alternatively, you can specify options
+            // var options = { margin: 10, filename: 'document.pdf', image: { type: 'jpeg', quality: 0.98 }, html2canvas: { scale: 2 } };
+            // html2pdf().from(element).set(options).outputPdf();
+        });
+    </script>
+    @* <script type="text/javascript">
+    $("#btnPdf").click(function () {
+    var sHtml = $("#pdfContainer").html();
+    sHtml = sHtml.replace(/</g, "StrTag").replace(/>/g, "EndTag");
+    window.open('../Home/GeneratePdf?html=' + sHtml, '_blank');
+    });
+    </script> *@
+</body>
+</html>

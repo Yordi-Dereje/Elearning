@@ -1,0 +1,94 @@
+﻿@model E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser;
+@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+    ViewData["Title"] = "Student";
+}
+
+
+@* //badge
+ *@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            showToast();
+        });
+
+        function showToast() {
+            var toaster = document.getElementById('toaster');
+            toaster.classList.add('show'); // Show the toaster
+
+            // Hide the toaster after  3 seconds
+            setTimeout(function () {
+                toaster.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+    <br />
+    <style>
+        #partitions{
+            padding: 0;
+        }
+
+        section{
+            padding: 0;
+        }
+        partition-chatbot{
+            width: 65vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="toast-body alert-success">
+        User Logged in Successfuly!
+    </div>
+    @* <aside>
+        <img src="~/Content/logincss/logo.PNG" />
+        <nav>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-book"></i> Courses</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-chart-bar"></i> Grades</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-chart-pie"></i> Statistics</a>
+            <a class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Index"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+
+    </aside> *@
+    
+    <main>
+    <div id="partitions">
+        <div class="partition">
+            <h2>Current progress</h2>
+            <p>No current courses at the moment</p>
+        </div>
+
+        <div class="partition">
+            <h2>Calendar</h2>
+            <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=Africa%2FNairobi&showPrint=0&src=YmI0NDEzZTMyOTA4YmNiZmJkMGJiZGNkMmNiMWVjODhkZjM5ZWNmZTZlZmU5OTVmZDVjODNiZjU1YjRmMjY3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #000" width="750" height="450" frameborder="0" scrolling="no"></iframe>
+        </div>
+           
+            <div class="partition-chatbot">
+                <iframe src="https://web.powerva.microsoft.com/environments/Default-d5bcaea6-ea02-45e2-a4ac-60b8c6269de1/bots/crb5e_simpleChatbot/webchat?__version__=2" frameborder="0" style="width: 60vw; height: 80vh; bottom: 0;"></iframe>
+            </div>
+       
+        </div>
+    </main>
+
+</body>
+</html>

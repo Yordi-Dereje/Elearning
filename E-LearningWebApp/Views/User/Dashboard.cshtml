@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser;
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
+
+    <aside>
+        <img src="logo.PNG" alt="">
+        <nav>
+            <a href="#" class="nav-link text-dark" asp-area="Identity" asp-controller="User" asp-action="Dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-book"></i> Courses</a>
+            <a href="#"><i class="fas fa-chart-bar"></i> Grades</a>
+            <a href="#"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a href="#"><i class="fas fa-chart-pie"></i> Statistics</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+
+    </aside>
+    <header>
+        <h2>Welcome back</h2>
+        <div class="prof">
+            <a href="#"><i class="fas fa-user"></i> @Model.FirstName</a>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="current_progress">
+            <h2>Current progress</h2>
+            <!-- Fetch from database -->
+            <p>No current courses at the moment</p>
+
+        </section>
+
+        <section class="cal">
+            <h2>Calendar</h2>
+            @* <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&bgcolor=%237CB342&ctz=Africa%2FNairobi&showPrint=0&src=YmI0NDEzZTMyOTA4YmNiZmJkMGJiZGNkMmNiMWVjODhkZjM5ZWNmZTZlZmU5OTVmZDVjODNiZjU1YjRmMjY3OUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23D50000" style="border:solid 1px #000" width="900" height="600" frameborder="0" scrolling="no"></iframe> *@
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+    <div id="partitions">
+        <h1>Coding Basics Quiz</h1>
+        <div class="partition">
+        <div class="quiz-question" id="question1">
+            <p>1. What is a database?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q1" value="a">A collection of files</li>
+                <li class="quiz-option"><input type="radio" name="q1" value="b">A structured set of data</li>
+                <li class="quiz-option"><input type="radio" name="q1" value="c">A programming language</li>
+                <li class="quiz-option"><input type="radio" name="q1" value="d">A type of hardware</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question2">
+            <p>2. What is SQL used for?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q2" value="a">Styling web pages</li>
+                <li class="quiz-option"><input type="radio" name="q2" value="b">Querying and managing databases</li>
+                <li class="quiz-option"><input type="radio" name="q2" value="c">Creating animations</li>
+                <li class="quiz-option"><input type="radio" name="q2" value="d">A text editor</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question3">
+            <p>3. What does the term "DBMS" stand for?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q3" value="a">Database Management System</li>
+                <li class="quiz-option"><input type="radio" name="q3" value="b">Database Manipulation System</li>
+                <li class="quiz-option"><input type="radio" name="q3" value="c">Dynamic Base Management System</li>
+                <li class="quiz-option"><input type="radio" name="q3" value="d">Distributed Binary Management System</li>
+            </ul>
+        </div>
+
+        <!-- Python Basics Questions -->
+
+        <div class="quiz-question" id="question4">
+            <p>4. What is Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q4" value="a">A reptile</li>
+                <li class="quiz-option"><input type="radio" name="q4" value="b">A programming language</li>
+                <li class="quiz-option"><input type="radio" name="q4" value="c">A database</li>
+                <li class="quiz-option"><input type="radio" name="q4" value="d">A web browser</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question5">
+            <p>5. Which of the following is used to comment in Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q5" value="a">// Single line comment</li>
+                <li class="quiz-option"><input type="radio" name="q5" value="b">/* Multi-line comment */</li>
+                <li class="quiz-option"><input type="radio" name="q5" value="c"># Single line comment</li>
+                <li class="quiz-option"><input type="radio" name="q5" value="d">/ Multi-line comment /</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question6">
+            <p>6. What is the purpose of the "print" function in Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q6" value="a">To take user input</li>
+                <li class="quiz-option"><input type="radio" name="q6" value="b">To display output</li>
+                <li class="quiz-option"><input type="radio" name="q6" value="c">To define a variable</li>
+                <li class="quiz-option"><input type="radio" name="q6" value="d">To create a loop</li>
+            </ul>
+        </div>
+
+        <!-- Shell Bash Basics Questions -->
+
+        <div class="quiz-question" id="question7">
+            <p>7. What is Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q7" value="a">A type of fish</li>
+                <li class="quiz-option"><input type="radio" name="q7" value="b">A programming language</li>
+                <li class="quiz-option"><input type="radio" name="q7" value="c">A text editor</li>
+                <li class="quiz-option"><input type="radio" name="q7" value="d">A command-line shell</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question8">
+            <p>8. What is the purpose of the "echo" command in Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q8" value="a">To print the current working directory</li>
+                <li class="quiz-option"><input type="radio" name="q8" value="b">To display output</li>
+                <li class="quiz-option"><input type="radio" name="q8" value="c">To create a file</li>
+                <li class="quiz-option"><input type="radio" name="q8" value="d">To delete a file</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question9">
+            <p>9. How can you check the contents of a directory in Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q9" value="a">ls</li>
+                <li class="quiz-option"><input type="radio" name="q9" value="b">dir</li>
+                <li class="quiz-option"><input type="radio" name="q9" value="c">show</li>
+                <li class="quiz-option"><input type="radio" name="q9" value="d">checkdir</li>
+            </ul>
+        </div>
+
+        <!-- Additional Questions -->
+
+        <div class="quiz-question" id="question10">
+            <p>10. In SQL, what does the term "SELECT" do?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q10" value="a">Inserts data into a table</li>
+                <li class="quiz-option"><input type="radio" name="q10" value="b">Updates data in a table</li>
+                <li class="quiz-option"><input type="radio" name="q10" value="c">Retrieves data from a table</li>
+                <li class="quiz-option"><input type="radio" name="q10" value="d">Deletes data from a table</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question11">
+            <p>11. What is the purpose of the "elif" statement in Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q11" value="a">To end a loop</li>
+                <li class="quiz-option"><input type="radio" name="q11" value="b">To execute code if the condition is true</li>
+                <li class="quiz-option"><input type="radio" name="q11" value="c">To handle multiple conditions</li>
+                <li class="quiz-option"><input type="radio" name="q11" value="d">To declare a variable</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question12">
+            <p>12. What is the purpose of the "mv" command in Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q12" value="a">To create a new file</li>
+                <li class="quiz-option"><input type="radio" name="q12" value="b">To move files or directories</li>
+                <li class="quiz-option"><input type="radio" name="q12" value="c">To copy files</li>
+                <li class="quiz-option"><input type="radio" name="q12" value="d">To delete files</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question13">
+            <p>13. What does the "len()" function do in Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q13" value="a">Returns the current date and time</li>
+                <li class="quiz-option"><input type="radio" name="q13" value="b">Returns the length of a string</li>
+                <li class="quiz-option"><input type="radio" name="q13" value="c">Returns the square root of a number</li>
+                <li class="quiz-option"><input type="radio" name="q13" value="d">Returns the sum of a list</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question14">
+            <p>14. What is the purpose of the "CREATE TABLE" statement in SQL?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q14" value="a">Deletes a table</li>
+                <li class="quiz-option"><input type="radio" name="q14" value="b">Updates records in a table</li>
+                <li class="quiz-option"><input type="radio" name="q14" value="c">Defines a new table structure</li>
+                <li class="quiz-option"><input type="radio" name="q14" value="d">Inserts records into a table</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question15">
+            <p>15. How do you open a file in Python?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q15" value="a">openFile("filename")</li>
+                <li class="quiz-option"><input type="radio" name="q15" value="b">file.open("filename")</li>
+                <li class="quiz-option"><input type="radio" name="q15" value="c">with open("filename")</li>
+                <li class="quiz-option"><input type="radio" name="q15" value="d">readFile("filename")</li>
+            </ul>
+        </div>
+        <div class="quiz-question" id="question16">
+            <p>16. In SQL, what is the purpose of the "GROUP BY" clause?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q16" value="a">To order the result set</li>
+                <li class="quiz-option"><input type="radio" name="q16" value="b">To filter the result set</li>
+                <li class="quiz-option"><input type="radio" name="q16" value="c">To perform aggregate functions on grouped data</li>
+                <li class="quiz-option"><input type="radio" name="q16" value="d">To join tables</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question17">
+            <p>17. How do you comment out multiple lines in a Python script?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q17" value="a"># Single line comment</li>
+                <li class="quiz-option"><input type="radio" name="q17" value="b">/* Multi-line comment */</li>
+                <li class="quiz-option"><input type="radio" name="q17" value="c">/** Multi-line comment **/</li>
+                <li class="quiz-option"><input type="radio" name="q17" value="d">''' Multi-line comment '''</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question18">
+            <p>18. What is the purpose of the "chmod" command in Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q18" value="a">To create a new file</li>
+                <li class="quiz-option"><input type="radio" name="q18" value="b">To move files or directories</li>
+                <li class="quiz-option"><input type="radio" name="q18" value="c">To change file permissions</li>
+                <li class="quiz-option"><input type="radio" name="q18" value="d">To copy files</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question19">
+            <p>19. What is the purpose of the "ORDER BY" clause in SQL?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q19" value="a">To group data</li>
+                <li class="quiz-option"><input type="radio" name="q19" value="b">To filter data</li>
+                <li class="quiz-option"><input type="radio" name="q19" value="c">To sort the result set</li>
+                <li class="quiz-option"><input type="radio" name="q19" value="d">To perform calculations</li>
+            </ul>
+        </div>
+
+        <div class="quiz-question" id="question20">
+            <p>20. What is the purpose of the "grep" command in Bash?</p>
+            <ul class="quiz-options radio-group">
+                <li class="quiz-option"><input type="radio" name="q20" value="a">To search for a file</li>
+                <li class="quiz-option"><input type="radio" name="q20" value="b">To copy files</li>
+                <li class="quiz-option"><input type="radio" name="q20" value="c">To find and replace text in files</li>
+                <li class="quiz-option"><input type="radio" name="q20" value="d">To search for a pattern in text</li>
+            </ul>
+        </div>
+
+
+
+        </div>
+    </div>
+
+    <div id="result-container">
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ["b", "b", "a", "b", "c", "b", "d", "b", "a", "b", "c", "b", "b", "c", "c", "c", "d", "c", "c", "d"];
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
+
+            let score = 0;
+
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
+
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
+                    }
+                }
+            });
+
+            // Display the result
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+        }
+    </script>
+
+</main>

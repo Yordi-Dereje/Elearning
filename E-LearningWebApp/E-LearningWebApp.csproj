@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>E_LearningWebApp</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\Landing\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Chapa.NET" Version="2.1.0" />
+    <PackageReference Include="itext7" Version="8.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.26" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.26">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="RestSharp" Version="110.2.0" />
+    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="23.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Certificate\" />
+    <Folder Include="wwwroot\Content\.git\objects\info\" />
+    <Folder Include="wwwroot\Content\.git\refs\tags\" />
+    <Folder Include="wwwroot\Content\navcss\" />
+    <Folder Include="wwwroot\Images\" />
+    <Folder Include="wwwroot\Links\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\Content\.git\config" />
+    <None Include="wwwroot\Content\.git\description" />
+    <None Include="wwwroot\Content\.git\HEAD" />
+    <None Include="wwwroot\Content\.git\hooks\applypatch-msg.sample" />
+    <None Include="wwwroot\Content\.git\hooks\commit-msg.sample" />
+    <None Include="wwwroot\Content\.git\hooks\fsmonitor-watchman.sample" />
+    <None Include="wwwroot\Content\.git\hooks\post-update.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-applypatch.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-commit.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-merge-commit.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-push.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-rebase.sample" />
+    <None Include="wwwroot\Content\.git\hooks\pre-receive.sample" />
+    <None Include="wwwroot\Content\.git\hooks\prepare-commit-msg.sample" />
+    <None Include="wwwroot\Content\.git\hooks\push-to-checkout.sample" />
+    <None Include="wwwroot\Content\.git\hooks\sendemail-validate.sample" />
+    <None Include="wwwroot\Content\.git\hooks\update.sample" />
+    <None Include="wwwroot\Content\.git\index" />
+    <None Include="wwwroot\Content\.git\info\exclude" />
+    <None Include="wwwroot\Content\.git\logs\HEAD" />
+    <None Include="wwwroot\Content\.git\logs\refs\heads\main" />
+    <None Include="wwwroot\Content\.git\logs\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\Content\.git\objects\pack\pack-5f416bc891721f37162ebf01afe852f9a1f5ca5d.idx" />
+    <None Include="wwwroot\Content\.git\objects\pack\pack-5f416bc891721f37162ebf01afe852f9a1f5ca5d.pack" />
+    <None Include="wwwroot\Content\.git\objects\pack\pack-5f416bc891721f37162ebf01afe852f9a1f5ca5d.rev" />
+    <None Include="wwwroot\Content\.git\packed-refs" />
+    <None Include="wwwroot\Content\.git\refs\heads\main" />
+    <None Include="wwwroot\Content\.git\refs\remotes\origin\HEAD" />
+    <None Include="wwwroot\Content\Certificate.html" />
+  </ItemGroup>
+
+</Project>

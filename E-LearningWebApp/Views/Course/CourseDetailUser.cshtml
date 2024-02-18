@@ -1,0 +1,179 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@using E_LearningWebApp.Models;
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+
+@{
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+    string GenerateTxRef()
+    {
+        // Generate a unique identifier for tx_ref
+        string txRef = "negade-tx-" + Guid.NewGuid().ToString("N");
+        return txRef;
+    }
+   
+
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+    <style>
+        #main{
+            padding: 0;
+        }
+        .course-details{
+            padding: 20px;
+        }
+        
+    </style>
+  
+      @*   <script>
+            document.addEventListener('DOMContentLoaded', function () {
+            var userId = '@ViewBag.userid'; // Replace with the actual user ID
+
+                fetch(`api/Pays/${userId}`)
+                    .then(function (response) {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        console.log(data);
+                        // Process the data received from the API
+                        // For example, display the checkout URL
+                        window.location.href = data.checkoutUrl;
+                    })
+                    .catch(function (error) {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            });
+        </script> *@
+
+</head>
+
+<body>
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs" data-aos="fade-in">
+            <div class="container">
+                <h2>Course Details</h2>
+            </div>
+        </div><!-- End Breadcrumbs -->
+
+        @* <div class="container">
+            <button type="button" class="btn btn-success">Success <span class="badge">@Model.courseview.</span></button>
+        </div> *@
+
+
+
+
+        <section id="course-details" class="course-details">
+            <div class="container" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-8" style="width: 50%">
+                        <!-- Display the course image -->
+                        <img src="@Model.courseview.imagePath" class="img-fluid" alt="Course Image" style="width: 80%">
+                    </div>
+                    <div class="col-lg-4" style=" margin-left: 5px">
+                        <!-- Course Info -->
+                        <div class="course-info d-flex justify-content-between align-items-center">
+                            <h3>@Model.courseview.CourseName</h3>
+
+                        </div>
+                        <div class="course-info d-flex justify-content-between align-items-center">
+                            <p>@Model.courseview.CourseDescription</p>
+                        </div>
+                        <div class="course-info d-flex justify-content-between align-items-center">
+                            <h5>Duration</h5>
+                            <p>@Model.courseview.CourseDuration Weeks</p>
+                        </div>
+                        <div class="course-info d-flex justify-content-between align-items-center">
+                            <h5>Price</h5>
+                            <p>$@Model.courseview.CoursePrice</p>
+                        </div>
+                        <div class="form-group">
+
+                            @* @ViewBag.userid *@
+
+                            @* chapa *@
+
+
+
+                            <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
+                                <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
+                                <input type="hidden" name="tx_ref" value="@GenerateTxRef()" />
+                                <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
+                                <input type="hidden" name="currency" value="ETB" />
+                                <input type="hidden" name="email" value="israel@negade.et" />
+                                <input type="hidden" name="first_name" value="Israel" />
+                                <input type="hidden" name="last_name" value="Goytom" />
+                                <input type="hidden" name="title" value="Let us do this" />
+                                <input type="hidden" name="description" value="Paying with Confidence with cha" />
+                                <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
+                                <input type="hidden" name="callback_url" value="https://localhost:7059" />
+                                @*  <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId =  @Model.courseview.CourseId })" />
+                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&amp;courseId=@Model.courseview.CourseId" />
+                                <input type="hidden" name="return_url" value="@Url.Action("Payment", "User", new { userId = @ViewBag.userid, courseId = @Model.courseview.CourseId })" />
+                                *@
+                                @*                                                     <input type="hidden" name="return_url" value="https://localhost:7059/User/ListUsers" />
+                                *@
+                                <input type="hidden" name="return_url" value="https://localhost:7059/User/Payment?userId=@ViewBag.userid&courseId=1" />
+
+
+                                <input type="hidden" name="meta[title]" value="test" />
+                                <button type="submit" class="get-started-btn align-items-right">Enroll</button>
+                            </form>
+
+
+                            @*  end chapa *@
+                        </div>
+                    </div>
+
+
+
+                   
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="col-lg-4">
+                <!-- SubCourses List -->
+                <div class="subcourses-list">
+                    <h3>SubCourses</h3>
+                    <ul>
+                        @if (Model.subcourseview != null)
+                        {
+                            foreach (var subs in Model.subcourseview)
+                            {
+                                <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
+                            }
+
+                        }
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+        </section>
+        <!-- End Cource Details Section -->
+    </main><!-- End #main -->
+
+
+
+</body>
+

@@ -1,0 +1,171 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+    <div id="partitions">
+        <div class="partition">
+            <h2>Shell Basics</h2>
+            <p>
+                <code>echo "Hello, World!"</code> - Prints "Hello, World!" to the console.
+            </p>
+            <p>
+                <code>uname -a</code> - Displays system information including the kernel version and architecture.
+            </p>
+            <p>
+                <code>date</code> - Prints the current date and time.
+            </p>
+            <p>
+                <code>whoami</code> - Prints the username of the current user.
+            </p>
+            <p>
+                <code>alias</code> - Lists all defined aliases.
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>File Operations</h2>
+            <p>
+                <code>mv [source] [destination]</code> - Moves or renames files or directories.
+            </p>
+            <p>
+                <code>rm -r [directory]</code> - Removes a directory and its contents recursively.
+            </p>
+            <p>
+                <code>cp -r [source] [destination]</code> - Copies directories and their contents recursively.
+            </p>
+            <p>
+                <code>ln -s [target] [link_name]</code> - Creates a symbolic link to a target file or directory.
+            </p>
+            <p>
+                <code>file [filename]</code> - Determines the file type.
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Redirection and Pipes</h2>
+            <p>
+                <code>echo "Error" 2> error.log</code> - Redirects standard error to a file.
+            </p>
+            <p>
+                <code>command1 || command2</code> - Executes command2 only if command1 fails (returns a non-zero exit status).
+            </p>
+            <p>
+                <code>sort [file] | uniq</code> - Sorts lines in a file and removes duplicates.
+            </p>
+            <p>
+                <code>tee [file]</code> - Reads from standard input and writes to standard output and files simultaneously.
+            </p>
+            <p>
+                <code>diff [file1] [file2]</code> - Compares two files line by line.
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Wildcards</h2>
+            <p>
+                <code>*</code> (Wildcard) - Matches any sequence of characters, useful for selecting multiple files based on a pattern.
+            </p>
+            <p>
+                <code>?</code> (Single-character Wildcard) - Matches any single character at the specified position.
+            </p>
+            <p>
+                <code>[]</code> (Character Class) - Matches any single character within the specified range.
+            </p>
+            <p>
+                <code>ls *.txt</code> - Lists all files with a ".txt" extension in the current directory.
+            </p>
+            <p>
+                <code>ls file?.txt</code> - Lists files like "file1.txt", "file2.txt", etc., where "?" represents a single character.
+            </p>
+            <p>
+                <code>ls file[1-3].txt</code> - Lists files like "file1.txt", "file2.txt", "file3.txt", where the character is within the range 1-3.
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Permissions</h2>
+            <p>
+                <code>chmod u+x script.sh</code> - Adds execute permission for the owner to the "script.sh" file.
+            </p>
+            <p>
+                <code>chmod go-rw file.txt</code> - Removes read and write permissions for the group and others from "file.txt".
+            </p>
+            <p>
+                <code>chown :staff file.txt</code> - Changes the group of "file.txt" to "staff".
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Searching and Filtering</h2>
+            <p>
+                <code>locate [file]</code> - Finds the location of a file in the system.
+            </p>
+            <p>
+                <code>grep -C 2 "pattern" [file]</code> - Displays two lines of context around each match of the pattern.
+            </p>
+            <p>
+                <code>find /path/to/search -type d -name "dir*"</code> - Finds directories with names starting with "dir" in the specified path.
+            </p>
+            <p>
+                <code>sed -n '/start/,/end/p' file.txt</code> - Prints lines between the specified start and end patterns in "file.txt".
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Environment Variables</h2>
+            <p>
+                <code>env</code> - Displays the current environment variables.
+            </p>
+            <p>
+                <code>export PATH=$PATH:/new/directory</code> - Appends a new directory to the PATH environment variable.
+            </p>
+            <p>
+                <code>unset MY_VARIABLE</code> - Removes the "MY_VARIABLE" environment variable.
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Process Management</h2>
+            <p>
+                <code>ps [options]</code> - Displays information about active processes.
+            </p>
+            <p>
+                <code>ps aux</code> - Lists detailed information about all processes running on the system.
+            </p>
+            <p>
+                <code>kill [options] [PID]</code> - Sends a signal to terminate a process.
+            </p>
+            <p>
+                <code>kill -9 1234</code> - Forces the termination of the process with the PID 1234.
+            </p>
+            <p>
+                <code>bg [job]</code> and <code>fg [job]</code> - Puts a process in the background or foreground.
+            </p>
+            <p>
+                <code>bg %1</code> - Puts the job with job ID 1 in the background.
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Miscellaneous</h2>
+            <p>
+                <code>curl -O http://example.com/file.zip</code> - Downloads a file from a URL using cURL.
+            </p>
+            <p>
+                <code>du -h</code> - Displays disk usage in a human-readable format.
+            </p>
+            <p>
+                <code>cal</code> - Displays a calendar for the current month.
+            </p>
+            <p>
+                <code>uptime</code> - Shows how long the system has been running.
+            </p>
+            <p>
+                <code>echo "alias ll='ls -la'" >> ~/.bashrc</code> - Adds a persistent alias to the user's bash configuration.
+            </p>
+        </div>
+    </div>
+
+</main>

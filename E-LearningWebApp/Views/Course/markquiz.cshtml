@@ -1,0 +1,279 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<main>
+    <div id="partitions">
+        <h1>Marketing course quiz</h1>
+        <div class="partition">
+            <div class="quiz-question" id="question1">
+                <p>1. What is the primary goal of digital marketing?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">To create physical products</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">To promote products and services using digital channels</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">To conduct market research</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">To develop software applications</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question2">
+                <p>2. What is the purpose of SEO in digital marketing?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">To design user interfaces</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">To optimize websites for search engines</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">To create social media content</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">To analyze financial data</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question3">
+                <p>3. What is the role of content marketing in digital strategies?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">To conduct online surveys</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">To create engaging and valuable content for the target audience</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">To manage customer relationships</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">To develop pricing strategies</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question4">
+                <p>4. What is the significance of social media marketing?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">To calculate return on investment (ROI)</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">To engage and connect with the audience on social platforms</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">To create financial statements</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">To develop supply chain strategies</li>
+                </ul>
+            </div>
+
+            <!-- Consumer Behavior Basics Questions -->
+
+            <div class="quiz-question" id="question5">
+                <p>5. What does consumer behavior refer to?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">The study of business operations</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">The process of making products</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">The actions and decisions of individuals when purchasing goods and services</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">The calculation of profit margins</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question6">
+                <p>6. What factors influence consumer buying decisions?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">Only product features</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">Price and quality</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">Marketing slogans</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">Seasonal weather conditions</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question7">
+                <p>7. What is the concept of brand loyalty?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">Changing brands frequently</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">Being loyal to a specific brand and consistently choosing it over others</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">Creating a new brand</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">Ignoring brands altogether</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question8">
+                <p>8. How do psychological factors influence consumer behavior?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">They have no impact</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">They influence perceptions, motives, and attitudes</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">They only affect the elderly</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">They determine the price of products</li>
+                </ul>
+            </div>
+
+            <!-- Marketing Research Basics Questions -->
+
+            <div class="quiz-question" id="question9">
+                <p>9. What is the purpose of marketing research?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">To create advertising campaigns</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">To gather and analyze information about markets and consumers</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">To design product packaging</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">To develop financial reports</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question10">
+                <p>10. What is a focus group in marketing research?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">A group of products with similar features</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">A group of people discussing a product or service guided by a moderator</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">A group of marketers brainstorming ideas</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">A group of competitors in the market</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question11">
+                <p>11. How can surveys be conducted in marketing research?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q11" value="a">Only in person</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="b">Through online platforms, phone calls, or in-person interviews</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="c">Only through phone calls</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="d">Through carrier pigeons</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question12">
+                <p>12. What is the difference between qualitative and quantitative research?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q12" value="a">There is no difference</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="b">Qualitative focuses on insights and opinions, while quantitative focuses on numerical data</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="c">Quantitative focuses on insights and opinions, while qualitative focuses on numerical data</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="d">Qualitative and quantitative research are the same thing</li>
+                </ul>
+            </div>
+
+            <!-- Sales Marketing Basics Questions -->
+
+            <div class="quiz-question" id="question13">
+                <p>13. What is the role of a salesperson in marketing?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q13" value="a">To design advertisements</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="b">To analyze market trends</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="c">To sell products or services to potential customers</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="d">To manage financial accounts</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question14">
+                <p>14. What is the purpose of a sales pitch?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q14" value="a">To share personal stories</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="b">To persuade potential customers and make a sale</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="c">To discuss market research findings</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="d">To create product prototypes</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question15">
+                <p>15. What is the importance of building relationships in sales?</p>
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q15" value="a">There is no importance</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="b">Building relationships enhances trust and customer loyalty</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="c">Building relationships only applies to personal life, not business</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="d">It only matters in online sales, not face-to-face interactions</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="question16">
+    <p>16. What is the purpose of email marketing in digital strategies?</p>
+    <ul class="quiz-options radio-group">
+        <li class="quiz-option"><input type="radio" name="q16" value="a">To create physical products</li>
+        <li class="quiz-option"><input type="radio" name="q16" value="b">To optimize websites for search engines</li>
+        <li class="quiz-option"><input type="radio" name="q16" value="c">To engage with the audience through email communication</li>
+        <li class="quiz-option"><input type="radio" name="q16" value="d">To develop software applications</li>
+    </ul>
+</div>
+
+<!-- Consumer Behavior Basics Questions -->
+
+<div class="quiz-question" id="question17">
+    <p>17. What is the role of culture in influencing consumer behavior?</p>
+    <ul class="quiz-options radio-group">
+        <li class="quiz-option"><input type="radio" name="q17" value="a">Culture has no impact on consumer behavior</li>
+        <li class="quiz-option"><input type="radio" name="q17" value="b">Culture shapes values, beliefs, and preferences affecting purchasing decisions</li>
+        <li class="quiz-option"><input type="radio" name="q17" value="c">Culture only influences individual preferences, not collective behavior</li>
+        <li class="quiz-option"><input type="radio" name="q17" value="d">Culture is only relevant in online marketing</li>
+    </ul>
+</div>
+
+<!-- Marketing Research Basics Questions -->
+
+<div class="quiz-question" id="question18">
+    <p>18. What is the difference between primary and secondary data in marketing research?</p>
+    <ul class="quiz-options radio-group">
+        <li class="quiz-option"><input type="radio" name="q18" value="a">There is no difference</li>
+        <li class="quiz-option"><input type="radio" name="q18" value="b">Primary data is collected firsthand, while secondary data is existing data collected by others</li>
+        <li class="quiz-option"><input type="radio" name="q18" value="c">Primary data is less reliable than secondary data</li>
+        <li class="quiz-option"><input type="radio" name="q18" value="d">Secondary data is collected directly from consumers</li>
+    </ul>
+</div>
+
+<!-- Sales Marketing Basics Questions -->
+
+<div class="quiz-question" id="question19">
+    <p>19. What is the significance of a sales funnel in marketing?</p>
+    <ul class="quiz-options radio-group">
+        <li class="quiz-option"><input type="radio" name="q19" value="a">A sales funnel is only relevant in e-commerce</li>
+        <li class="quiz-option"><input type="radio" name="q19" value="b">It represents the stages a potential customer goes through before making a purchase</li>
+        <li class="quiz-option"><input type="radio" name="q19" value="c">A sales funnel is a tool used exclusively by sales managers</li>
+        <li class="quiz-option"><input type="radio" name="q19" value="d">A sales funnel measures the physical sales achieved in a given time</li>
+    </ul>
+</div>
+
+<div class="quiz-question" id="question20">
+    <p>20. What is the primary objective of a marketing campaign?</p>
+    <ul class="quiz-options radio-group">
+        <li class="quiz-option"><input type="radio" name="q20" value="a">To create marketing materials</li>
+        <li class="quiz-option"><input type="radio" name="q20" value="b">To build brand loyalty</li>
+        <li class="quiz-option"><input type="radio" name="q20" value="c">To gather customer feedback</li>
+        <li class="quiz-option"><input type="radio" name="q20" value="d">To achieve specific marketing objectives within a defined timeframe</li>
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+
+    <div id="result-container">
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ["b", "b", "b", "b", "c", "b", "b", "b", "b", "b", "b", "b", "c", "b", "b", "c", "b", "b", "b", "d"];
+
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
+
+            let score = 0;
+
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
+
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
+                    }
+                }
+            });
+
+            // Display the result
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+        }
+    </script>
+
+</main>

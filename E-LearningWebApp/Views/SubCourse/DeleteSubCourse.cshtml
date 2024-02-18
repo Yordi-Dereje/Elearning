@@ -1,0 +1,61 @@
+﻿@model E_LearningWebApp.Models.SubCourses
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "DeleteSubCourse";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+    <style>
+        h3, dt{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SubCourseName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SubCourseName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SubCourseDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SubCourseDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SubCourseDuration)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SubCourseDuration)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Course)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Course.CourseCode)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteSubCourse">
+        <input type="hidden" asp-for="SubCourseId" />
+        <input type="submit" value="Delete" asp-route-courseId="@ViewBag.CourseId" class="btn btn-danger" /> |
+        <a asp-action="GetAllSubCourses">Back to List</a>
+    </form>
+</div>
+</body>

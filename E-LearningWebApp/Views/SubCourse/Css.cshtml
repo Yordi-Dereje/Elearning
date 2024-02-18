@@ -1,0 +1,187 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+<main>
+    <div id="partitions">
+
+        <div class="partition">
+            <h2>CSS Fundamentals</h2>
+            <p>CSS (Cascading Style Sheets) is a powerful styling language used for designing and layout purposes in web development. Learn the basics of selectors, properties, and values to style HTML documents.</p>
+            <iframe width="656" height="369" src="https://www.youtube.com/embed/1PnVor36_40" title="Learn CSS in 20 Minutes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p>CSS works by:</p>
+
+            <ul>
+                <li>selecting an HTML element</li>
+                <li>choosing a property to alter</li>
+                <li>applying a certain value</li>
+            </ul>
+
+
+            <h3>Syntax</h3>
+
+<pre><code>element-selector {
+ one-style-property: value;
+ another-style-property: value;
+}
+</code></pre>
+
+            <p>A property + value is known as a &ldquo;declaration&rdquo;. Like this: <code>text-align: center;</code></p>
+
+            <p>In general, and for readability purposes, we tend to put each declaration on separate lines like the example above. Some people argue that is better to put everything (element, property and value) in one line (when it has a single declaration), but you might need to add more declarations in the future. Also, placing each declaration on dedicated lines makes the code a lot easier to read and follow.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Applying CSS to HTML</h2>
+
+            <p>There are a couple of ways to apply CSS to a HTML project. Let&rsquo;s review them.</p>
+
+            <h4>External stylesheet</h4>
+
+            <p>An external stylesheet contains CSS in a separate file with a <code>.css</code> extension. This is the most commonly used method of adding CSS to a document. You can also link a single CSS file to multiple web pages, styling all of them with the same CSS stylesheet.</p>
+
+            <p>Example of an external stylesheet file linked to the HTML:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Adding Styles&lt;/title&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello CSS!&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+            <p>The external file could look something like this:</p>
+
+<pre><code>h1 {
+  color: deepskyblue;
+  text-align: center;
+}
+</code></pre>
+
+            <h4>Internal stylesheet</h4>
+
+            <p>An internal stylesheet resides within an HTML document. To create an internal stylesheet, just place CSS code inside a <code>&lt;style&gt;</code> element contained inside <code>&lt;head&gt;</code> element of the HTML.</p>
+
+            <p>Example of an internal stylesheet file linked to the HTML:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Adding Styles&lt;/title&gt;
+  &lt;style&gt;
+    h1 {
+      color: deepskyblue;
+      text-align: center;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;h1&gt;Hello CSS!&lt;/h1&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+            <h4>Inline styles</h4>
+
+            <p>Inline styles are CSS declarations that affect a single HTML element, contained within a <code>style</code> attribute. </p>
+
+            <p>Example of an inline style in an HTML document:</p>
+
+<pre><code>&lt;h1 style=&quot;color: deepskyblue; text-align: center;&quot;&gt;Hello CSS!&lt;/h1&gt;
+</code></pre>
+
+            <p><strong>Note</strong>: Inline styles take precedence over stylesheets, so a inline style will always prevail over any other.</p>
+        </div>
+
+
+        <div class="partition">
+            <h2>Box Model</h2>
+            <p>The CSS Box Model is a fundamental concept that defines how elements are rendered on a web page. It consists of four main components:</p>
+
+            <ol>
+                <li><strong>Content:</strong> The actual content of the element, defined by width and height properties.</li>
+                <li><strong>Padding:</strong> Space between content and border, controlled by the padding property.</li>
+                <li><strong>Border:</strong> Surrounds padding and content, with properties for style, width, and color.</li>
+                <li><strong>Margin:</strong> The space outside the border, providing separation between elements.</li>
+            </ol>
+
+            <p><strong>Illustration of the Box Model:</strong></p>
+            <pre>
++-------------------+
+|      Margin       |
+|                   |
+|  +---------------+|
+|  |    Border     ||
+|  |               ||
+|  |  +---------+  ||
+|  |  | Padding |  ||
+|  |  |         |  ||
+|  |  | Content |  ||
+|  |  |         |  ||
+|  |  +---------+  ||
+|  |               ||
+|  +---------------+|
+|                   |
++-------------------+
+            </pre>
+
+            <h2>Key Concepts</h2>
+            <ul>
+                <li><strong>Width and Height:</strong> Controlled by the width and height properties.</li>
+                <li><strong>Box Sizing:</strong> Determines how the total width and height are calculated (content-box, border-box).</li>
+                <li><strong>Margin Collapse:</strong> Margins of adjacent elements can collapse.</li>
+                <li><strong>Overflow:</strong> Determines how content behaves when it's larger than the allocated space.</li>
+            </ul>
+
+            <p>Understanding and mastering the Box Model is crucial for effective web layout and design. It enables developers to control spacing, dimensions, and overall positioning of elements on a webpage.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Understanding Flexbox</h2>
+            <p>Flexbox is a one-dimensional layout method for laying out items in rows or columns. It offers an efficient way to distribute space and align items in a container, even when their size is unknown or dynamic. Key concepts include:</p>
+
+            <ul>
+                <li><strong>Flex Container:</strong> The parent element with <code>display: flex;</code> or <code>display: inline-flex;</code>.</li>
+                <li><strong>Flex Items:</strong> The children of the flex container.</li>
+                <li><strong>Main Axis:</strong> The primary axis along which flex items are distributed.</li>
+                <li><strong>Cross Axis:</strong> The perpendicular axis to the main axis.</li>
+                <li><strong>Flex Properties:</strong> Properties like <code>flex-grow</code>, <code>flex-shrink</code>, and <code>flex-basis</code>.</li>
+            </ul>
+
+            <p>Flexbox is particularly useful for creating responsive and dynamic layouts, especially in scenarios where the size of your items is unknown or varies.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Understanding Grid</h2>
+            <p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you design layouts in terms of rows and columns, providing precise control over the placement and sizing of items. Key concepts include:</p>
+
+            <ul>
+                <li><strong>Grid Container:</strong> The parent element with <code>display: grid;</code>.</li>
+                <li><strong>Grid Items:</strong> The children of the grid container.</li>
+                <li><strong>Grid Lines:</strong> Horizontal and vertical lines that define the grid structure.</li>
+                <li><strong>Grid Tracks:</strong> The space between two adjacent grid lines, creating rows or columns.</li>
+                <li><strong>Grid Areas:</strong> Named regions of the grid.</li>
+            </ul>
+
+            <p>CSS Grid is powerful for creating complex and responsive layouts with precise control over both the rows and columns, making it an excellent choice for overall page structure.</p>
+        </div>
+
+        <div class="partition">
+            <h2>Resources</h2>
+            <a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps" target="_blank">CSS first steps - Learn web development | MDN</a>
+        </div>
+    </div>
+
+    
+</main>

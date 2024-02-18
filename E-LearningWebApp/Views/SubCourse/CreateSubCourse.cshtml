@@ -1,0 +1,63 @@
+﻿@model E_LearningWebApp.Models.SubCourses
+
+@{
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+    ViewData["Title"] = "CreateSubCourse";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+</head>
+<body>
+
+<h3>CreateSubCourse</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CreateSubCourse" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubCourseName" class="control-label"></label>
+                <input asp-for="SubCourseName" class="form-control" />
+                <span asp-validation-for="SubCourseName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubCourseDescription" class="control-label"></label>
+                <input asp-for="SubCourseDescription" class="form-control" />
+                <span asp-validation-for="SubCourseDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SubCourseDuration" class="control-label"></label>
+                <input asp-for="SubCourseDuration" class="form-control" />
+                <span asp-validation-for="SubCourseDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <span class="form-control">@ViewBag.CourseName</span>
+            </div>
+
+           @*  <div class="form-group">
+                <label asp-for="CourseId" class="control-label"></label>
+                <label asp-for="CourseId" class="form-control">@ViewBag.CourseId</label>
+            </div> *@@* asp-items="ViewBag.CourseId" *@
+            <div class="form-group">
+                    <input type="submit" value="Create" asp-route-courseId="@ViewBag.CourseId" class="btn btn-primary" style="background-color: green" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+        <a asp-action="GetAllSubCourses" asp-route-courseId="@ViewBag.CourseId">Back to List</a>
+</div>
+</body>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,118 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@model E_LearningWebApp.Models.MultipleViewModel
+
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <div class="breadcrumbs" data-aos="fade-in">
+            <div class="container">
+                <h2>Course Details</h2>
+            </div>
+        </div><!-- End Breadcrumbs -->
+        <!-- Course Details Section -->
+        @* notif *@
+
+
+
+            @* <div class="container">
+                <button type="button" class="btn btn-success">Success <span class="badge">@Model.courseview.</span></button>
+            </div> *@
+
+      
+
+
+    <section id="course-details" class="course-details">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-8" style="width: 50%">
+                    <!-- Display the course image -->
+                    <img src="@Model.courseview.imagePath" class="img-fluid" alt="Course Image" style="width: 80%">
+                </div>
+                <div class="col-lg-4">
+                    <!-- Course Info -->
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h3>@Model.courseview.CourseName</h3>
+
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <p>@Model.courseview.CourseDescription</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Duration</h5>
+                        <p>@Model.courseview.CourseDuration Weeks</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Price</h5>
+                        <p>$@Model.courseview.CoursePrice</p>
+                    </div>
+                </div>
+
+
+                    @*
+                    <div class="form-group">
+                        <input type="submit" value="Enroll" class="btn btn-primary" style="background-color: green" />
+
+                        <button class="get-started-btn align-items-right" asp-controller="Payment" asp-action="UserPayment" asp-route-userid="@ViewBag.userid">Pay Now</button>
+                         <form method="POST" class="form" action="https://api.chapa.co/v1/hosted/pay">
+                            <input type="hidden" name="public_key" value="CHAPUBK_TEST-iuDgvUTK7jeeGEcNxPMy9Wuf73IdVKYC" />
+                            <input type="hidden" name="tx_ref" value="negade-tx-123332334456778sss9" />
+                            <input type="hidden" name="amount" value=@Model.courseview.CoursePrice />
+                            <input type="hidden" name="currency" value="ETB" />
+                            <input type="hidden" name="email" value="israel@negade.et" />
+                            <input type="hidden" name="first_name" value="Israel" />
+                            <input type="hidden" name="last_name" value="Goytom" />
+                            <input type="hidden" name="title" value="Let us do this" />
+                            <input type="hidden" name="description" value="Paying with Confidence with cha" />
+                            <input type="hidden" name="logo" value="https://chapa.link/asset/images/chapa_swirl.svg" />
+                            <input type="hidden" name="callback_url" value="https://localhost:7059"  />
+                            <input type="hidden" name="return_url" value="https://localhost:7059/" />
+                            <input type="hidden" name="meta[title]" value="test" />
+                            <button type="submit" class="get-started-btn align-items-right">Pay Now</button>
+                        </form> 
+                    </div>*@
+
+                    
+
+            </div>
+            <div class="col-lg-4">
+                <!-- SubCourses List -->
+                <div class="subcourses-list">
+                    <h3>SubCourses</h3>
+                    <ul>
+                            @if (Model.subcourseview != null)
+                            {
+                                foreach (var subs in Model.subcourseview)
+                                {
+                                <li>@subs.SubCourseName - @subs.SubCourseDescription </li>
+                                }
+
+                            }
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Cource Details Section -->
+</main><!-- End #main -->
+
+
+
+</body>
+

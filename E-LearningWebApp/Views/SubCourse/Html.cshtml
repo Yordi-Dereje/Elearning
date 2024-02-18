@@ -1,0 +1,413 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+@model E_LearningWebApp.Models.SubCourses;
+@{
+    Layout = "UserLayout";
+}
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+
+<main>
+
+    <div id="partitions">
+        <h1>HTML - Elements of a web page </h1>
+        <div class="partition">
+            <h2>Doctype</h2>
+            <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration is necessary at the top of every HTML page to force the browser to render the page according to relevant specifications.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN Web Docs Glossary: Definitions of Web-related terms</a>
+                |
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>HTML Tag</h2>
+            <p>The <code>&lt;html&gt;</code> tag tells the browser that the document is an HTML webpage. It is used as a container for all the HTML elements.</p>
+            <p><strong>Warning!</strong> The doctype is the only element living outside the html tag.</p>
+            <pre>
+            <code>
+                    &lt;html lang="fr" dir="ltr"&gt;
+                </code>
+            </pre>
+            <p>
+                Language and reading direction:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/International/RTLWeb">Building RTL-Aware Web Apps & Websites: Part 1</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Head Tag</h2>
+            <p>The head tag contains metadata related to your page, such as the title, asynchronous script calls, metadata, CSS code embed, and JavaScript code embed.</p>
+            <p>
+                Usage:
+                <pre>
+                <code>
+                        &lt;head&gt;
+                            &lt;!-- Set character encoding for the document --&gt;
+                            &lt;meta charset="value"&gt;
+                        &lt;/head&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Doctype</h2>
+            <p>The <code>&lt;!DOCTYPE html&gt;</code> declaration is necessary at the top of every HTML page to force the browser to render the page according to relevant specifications.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Glossary/Doctype">MDN Web Docs Glossary: Definitions of Web-related terms</a>
+                |
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>HTML Tag</h2>
+            <p>The <code>&lt;html&gt;</code> tag tells the browser that the document is an HTML webpage. It is used as a container for all the HTML elements.</p>
+            <p><strong>Warning!</strong> The doctype is the only element living outside the html tag.</p>
+            <pre>
+            <code>
+                    &lt;html lang="fr" dir="ltr"&gt;
+                </code>
+            </pre>
+            <p>
+                Language and reading direction:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/International/RTLWeb">Building RTL-Aware Web Apps & Websites: Part 1</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Head Tag</h2>
+            <p>The head tag contains metadata related to your page, such as the title, asynchronous script calls, metadata, CSS code embed, and JavaScript code embed.</p>
+            <p>
+                Usage:
+                <pre>
+                <code>
+                        &lt;head&gt;
+                            &lt;!-- Set character encoding for the document --&gt;
+                            &lt;meta charset="value"&gt;
+                        &lt;/head&gt;
+                    </code>
+                </pre>
+            </p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Guide/html/Introduction#the_head_metadata_in_html">A free guide to head elements</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Meta Charset</h2>
+            <p>The meta charset declares the page’s character encoding.</p>
+            <pre>
+            <code>
+                    &lt;head&gt;
+                        &lt;!-- Set character encoding for the document --&gt;
+                        &lt;meta charset="value"&gt;
+                    &lt;/head&gt;
+                </code>
+            </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">The Document-level Metadata element - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Viewport</h2>
+            <p>The meta viewport gives information about the initial size of the viewport. It is used by mobile devices only.</p>
+            <p><strong>Accessibility tip:</strong> Never use <code>maximum-scale=1.0</code>. It prevents the user from zooming in on the website, causing an accessibility issue.</p>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Viewport for responsive web design --&gt;
+                &lt;meta name="viewport" content="key=value, key=value"&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag">Responsive Design With Viewport Control</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Title</h2>
+            <p>The title meta tag defines the title of the web page. The title is only visible on the tab/window of your browser.</p>
+            <p><strong>Warning!</strong> The title should always have less than 56 characters.</p>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Document Title --&gt;
+                &lt;title&gt;Page title&lt;/title&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://yoast.com/seo-title-width/">The ideal width of the SEO title • Yoast</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Meta Description</h2>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Meta Description --&gt;
+                &lt;meta name="description" content="Description of the page less than 150 characters"&gt;
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://yoast.com/meta-descriptions/">The ideal length of a meta description • Yoast</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Favicons</h2>
+            <pre>
+            <code>
+            &lt;head&gt;
+                ...
+                &lt;!-- Standard favicon --&gt;
+                &lt;link rel="icon" type="image/x-icon" href="https://example.com/favicon.ico"&gt;
+                &lt;!-- Recommended favicon format --&gt;
+                &lt;link rel="icon" type="image/png" href="https://example.com/favicon.png"&gt;
+                ...
+            &lt;/head&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://www.favicon-generator.org/">Favicon & App Icon Generator</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Tag Attributes</h2>
+            <p>Attributes provide additional information or instruction for an HTML element. It is always included inside the opening tag.</p>
+            <p><strong>Data-* attribute:</strong> It is possible to declare any attribute using the <code>data-</code> prefix</p>
+            <pre>
+            <code>
+            &lt;tag data-extra-attr="value"&gt;some content&lt;/tag&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes">HTML attribute reference - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Header Tag</h2>
+            <p>The <code>&lt;header&gt;</code> HTML tag element is used to identify the top of a webpage, article, section, or other segment of a page. The header is normally always the same across all pages of your website.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Logo of the website</li>
+                    <li>Navigation</li>
+                    <li>Search form</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;header/&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p><strong>Warning!</strong> The <code>main</code> element should never be a descendant of an <code>article</code>, <code>aside</code>, <code>header</code>, <code>footer</code>, or <code>nav</code> element.</p>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">header - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Main Tag</h2>
+            <p>The <code>&lt;main&gt;</code> HTML tag is a structural element located generally between the <code>&lt;header&gt;</code> and the <code>&lt;footer&gt;</code> and contains the content of your web page.</p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;/header&gt;
+                &lt;main&gt;
+                    This is where I put my content
+                &lt;/main&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">main - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+        <div class="partition">
+            <h2>Footer Tag</h2>
+            <p>The <code>&lt;footer&gt;</code> HTML tag is a structural element used to identify the footer of a page, article, or section.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Copyright information</li>
+                    <li>Authorship information</li>
+                    <li>Navigation elements</li>
+                    <li>Social icons or links</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;This is my header&lt;header/&gt;
+                &lt;main&gt;
+                    This is where I put my content
+                &lt;/main&gt;
+                &lt;footer&gt;This is the footer of my page&lt;/footer&gt;
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">footer - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Aside Tag</h2>
+            <p>The <code>&lt;aside&gt;</code> HTML tag contains additional information related to the main content.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Monthly archives</li>
+                    <li>List of categories</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;
+                        &lt;article&gt;This is my article 1&lt;/article&gt;
+                        &lt;article&gt;This is my article 2&lt;/article&gt;
+                        &lt;article&gt;This is my article 3&lt;/article&gt;
+                    &lt;/section&gt;
+                    &lt;aside&gt;
+                        <!-- Additional information goes here -->
+                    &lt;/aside&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">aside - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Section Tag</h2>
+            <p>The <code>&lt;section&gt;</code> tag element allows the grouping of related elements. You can usually find a <code>&lt;header&gt;</code> and <code>&lt;footer&gt;</code> attached to a section.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Grouping related elements</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;This is my section 1&lt;/section&gt;
+                    &lt;section&gt;This is my section 2&lt;/section&gt;
+                    &lt;section&gt;This is my section 3&lt;/section&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">section - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Article Tag</h2>
+            <p>An <code>&lt;article&gt;</code> HTML tag represents a self-contained piece of content which could theoretically be distributed to other websites and platforms as a stand-alone unit.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Blog posts</li>
+                    <li>News articles</li>
+                    <li>Product cards</li>
+                    <li>Forum posts</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                ...
+                &lt;main&gt;
+                    &lt;section&gt;
+                        &lt;article&gt;This is article 1&lt;/article&gt;
+                        &lt;article&gt;This is article 2&lt;/article&gt;
+                    &lt;/section&gt;
+                &lt;/main&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">article - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+        <div class="partition">
+            <h2>Nav Tag</h2>
+            <p>The <code>&lt;nav&gt;</code> HTML tag is used to define a set of navigation links.</p>
+            <p>
+                Usage:
+                <ul>
+                    <li>Main navigation menu</li>
+                    <li>Subnavigation menu</li>
+                </ul>
+            </p>
+            <pre>
+            <code>
+            &lt;body&gt;
+                &lt;header&gt;
+                    &lt;nav&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#about"&gt;About&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#services"&gt;Services&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href="#contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/nav&gt;
+                &lt;/header&gt;
+                ...
+            &lt;/body&gt;
+        </code>
+    </pre>
+            <p>
+                Resources:
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">nav - HTML: Hypertext Markup Language | MDN</a>
+            </p>
+        </div>
+
+    </div>
+
+</main>

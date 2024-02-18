@@ -1,0 +1,175 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <title>Git</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+
+</head>
+<body>
+
+   @*  <aside>
+        <img src="~/Content/logincss/logo.jpg" alt="">
+        <nav>
+            <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-book"></i> Courses</a>
+            <a href="#"><i class="fas fa-chart-bar"></i> Grades</a>
+            <a href="#"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a href="#">
+                <i class="fas fa-chart-pie"></i>
+                Statistics
+            </a>
+
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+
+    </aside>
+
+    <header>
+        <h2>Authenticating Git</h2>
+        <div class="prof">
+            <a href="#"><i class="fas fa-user"></i> Yordanos</a>
+        </div>
+    </header> *@
+
+    <main>
+        <div id="partitions">
+            <div class="partition">
+                <h2>Authenticating Git and Github</h2>
+                <p>Authenticating GitHub is important to protect your account and your code from unauthorized access</p>
+                <ol>
+                    <li><a href="https://intranet.alxswe.com/concepts/100035#h.a9dmi41rmb4z">Username and password with two-factor authentication, or a passkey</a></li>
+                    <li><a href="https://intranet.alxswe.com/concepts/100035#h.bbbzxsq1l9me">Personal access token</a></li>
+                    <li><a href="https://intranet.alxswe.com/concepts/100035#h.q0v45bkco55bi">SSH key</a></li>
+                </ol>
+            </div>
+
+            <div class="partition">
+                <h2>1. Username and password with two-factor authentication, or a passkey</h2>
+                <p>As the default authentication method. Requires you to enter your login credentials each time you want to access GitHub. Currently, this method only supports github login, but not project cloning and pushing</p>
+                <p>1. Username and password with 2FA</p>
+                <ul>
+                    <li>Requires you to enter your username, password, and a one-time code from your phone each time you want to authenticate.</li>
+                    <li>
+                        This adds an extra layer of security to your account, as even if someone has your username and password, they will not be able to log in without the one-time code.
+                    </li>
+                </ul>
+                <p>2. Passkey</p>
+                <ul>
+                    <li>A passkey is a unique digital credential that can be used to authenticate to websites and apps without the need for a password.</li>
+                    <li>
+                        To use a passkey, you will need to create one on your device and then register it with GitHub.
+                    </li>
+                    <li>
+                        Once you have registered a passkey with GitHub, you can use it to authenticate to GitHub without having to enter a username or password.
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="partition">
+                <h2>2. Personal Access Token</h2>
+                <p>A personal access token (PAT) is a unique string that can be used to authenticate to GitHub on your behalf. PATs can be created with different permissions and scopes, so you can control what actions they can perform. They can also be used to grant access to your repositories to third-party apps and services.</p>
+
+                <h3>Steps to create a GitHub personal access token (PAT)</h3>
+                <ol>
+                    <li> Go to your GitHub account settings and click the Personal Access Tokens tab. </li>
+                    <li>Click the Generate new token button.</li>
+                    <li>Enter a name and description for your PAT. </li>
+                    <li>Select the permissions and scopes that you want your PAT to have.</li>
+                    <li> Click the Generate token button. </li>
+                </ol>
+                <p> Your PAT will be displayed in a text box. Copy and store your PAT in a secure location. You will need this PAT to authenticate to GitHub using the command line or third-party apps and services. </p>
+                <p>Once you have created a PAT, you can use it to authenticate to GitHub by cloning a repository or pushing changes to a repository. </p>
+
+                <h3>How to clone a repository using a personal access token (PAT)</h3>
+                <ol>
+                    <li>Open a terminal window.</li>
+                    <li>Navigate to the directory where you want to clone the repository.</li>
+                    <li>
+                        Clone the repository using the following command:
+                        </br>
+
+                        <span>git clone https://github.com/&lt;username&gt;/&lt;repository&gt;.git –token &lt;pat&gt;</span>
+                    </li>
+                    <li>
+                        Replace &lt;username&gt; with your GitHub username, &lt;repository&gt; with the name of the repository you want to clone, and &lt;pat&gt; with your PAT.
+
+                    </li>
+                    <li>
+                        Once the repository has been cloned, you can navigate to it using the <span> cd</span> command and start working on the code.
+                    </li>
+                </ol>
+
+
+
+                <h3>How to push changes to a repository using a PAT</h3>
+                <ol>
+                    <li>Open a terminal window.</li>
+                    <li>Navigate to the directory where you want to push the changes from.</li>
+                    <li> Stage the changes that you want to push using the <span>git add </span> command. </li>
+                    <li>
+                        Commit the changes using the <span>git commit </span> command: </br>
+
+                        <span>git clone https://github.com/&lt;username&gt;/&lt;repository&gt;.git –token &lt;pat&gt;</span>
+                    </li>
+                    <li>
+                        Replace &lt;username&gt; with your GitHub username, &lt;repository&gt; with the name of the repository you want to clone, and &lt;pat&gt; with your PAT.
+
+                    </li>
+                    <li>
+                        Once the repository has been cloned, you can navigate to it using the <span> cd </span> command and start working on the code.
+                    </li>
+                </ol>
+
+            </div>
+
+
+            <div class="partition">
+                <h2>3. SSH Key</h2>
+                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/X8Mp-s6ZQVo" title="Git SSH auth video demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+                </br>
+                <h2>Generate an SSH Key:</h2>
+                <ol>
+                    <li>Open a terminal window.</li>
+                    <li>Generate a new SSH key with the following command:</li>
+                </ol>
+                <pre><code>ssh-keygen -t ed25519</code></pre>
+                <ol start="3">
+                    <li>Enter a passphrase for your key when prompted. The passphrase is optional.</li>
+                    <li>Press Enter to accept the default file location for your key.</li>
+                </ol>
+                <p>Your SSH key has now been generated. The public key is stored in the file <code>~/.ssh/id_ed25519.pub</code> and the private key is stored in the file <code>~/.ssh/id_ed25519</code>.</p>
+
+            </div>
+            <div class="partition">
+                <h2>Add your SSH key to GitHub:</h2>
+                <ol>
+                    <li>Go to your GitHub profile settings.</li>
+                    <li>Click the SSH and GPG keys tab.</li>
+                    <li>Click the New SSH key button.</li>
+                    <li>Paste the contents of your public key file (<code>~/.ssh/id_ed25519.pub</code>) into the Key field.</li>
+                    <li>Click the Add SSH key button.</li>
+                </ol>
+
+                <p>GitHub SSH key authentication is a method of authentication that uses SSH keys to verify your identity. SSH keys are a cryptographic key pair that consists of a public key and a private key. The public key is shared with others, while the private key is kept secret.</p>
+
+                <p>To use SSH key authentication with GitHub, you will need to generate an SSH key pair and add the public key to your GitHub account. Once you have done this, you can use the private key to authenticate to GitHub and access your repositories.</p>
+            </div>
+            <div class="partition">
+                <h2>Resources</h2>
+                <p>For more information, refer to the <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-authentication-to-github" target="_blank" rel="noopener noreferrer">GitHub Auth Documentation</a>.</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

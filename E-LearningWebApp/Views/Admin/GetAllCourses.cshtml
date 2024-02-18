@@ -1,0 +1,80 @@
+﻿@model IEnumerable<E_LearningWebApp.Models.Courses>
+
+@{
+    ViewData["Title"] = "GetAllCourses";
+}
+<br />
+<br />
+<br />
+<main
+<h1>GetAllCourses</h1>
+
+<p>
+    <a asp-action="Course/Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseDescription)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CoursePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseDuration)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CoursePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseDuration)
+            </td>
+            <td>
+                @* <a asp-action="Edit" asp-route-id="@item.CourseId">Edit</a> | *@
+
+
+                    <a href="/Course/Edit/@item.CourseId" >Edit</a> |
+
+
+                    @* <a href="/Course/GetCourseById/@item.CourseId">Details</a> | *@
+
+                    <div class="btn-group">
+                        <a href="/Course/GetCourseById/@item.CourseId" class="btn btn-sm btn-outline-secondary">View Detail</a>
+                    </div>|
+
+                    <a href ="/Course/Delete/@item.CourseId">
+                        Delete
+                    </a>
+
+
+                  @*   <a href="/Courses/Delete/@item.CourseId">Delete</a> *@
+@*                 <a asp-action="Delete" asp-route-id="@item.CourseId">Delete</a>
+
+ *@            </td>
+        </tr>
+}
+    </tbody>
+</table>
+></main>

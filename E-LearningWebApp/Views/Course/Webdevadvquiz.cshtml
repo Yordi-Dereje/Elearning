@@ -1,0 +1,298 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity
+@using E_LearningWebApp.Models
+
+@inject SignInManager<E_LearningWebAppUser> SignInManager
+@inject UserManager<E_LearningWebAppUser> UserManager
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+@* <style>
+    .active {
+        display: block;
+    }
+</style> *@
+
+<main>
+    <div id="partitions">
+        <h1>Advanced Web Development Quiz</h1>
+        <div class="partition">
+            <!-- HTML -->
+            <div class="quiz-question" id="q1">
+                <p>1. What is Node.js commonly used for?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q1" value="a">Client-side rendering</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="b">Server-side JavaScript execution</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="c">Creating interactive user interfaces</li>
+                    <li class="quiz-option"><input type="radio" name="q1" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q2">
+                <p>2. What lifecycle method is invoked immediately after a component is inserted into the DOM in React?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q2" value="a">componentDidMount</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="b">componentWillMount</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="c">componentRendered</li>
+                    <li class="quiz-option"><input type="radio" name="q2" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q3">
+                <p>3. What is the purpose of JSX in React?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q3" value="a">To define component structure using syntax similar to XML/HTML</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="b">To handle asynchronous operations</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="c">To access external APIs</li>
+                    <li class="quiz-option"><input type="radio" name="q3" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q4">
+                <p>4. In Rust, what is ownership?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q4" value="a">A way to purchase a license for Rust</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="b">A system to manage memory and prevent data races</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="c">A version control system</li>
+                    <li class="quiz-option"><input type="radio" name="q4" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q5">
+                <p>5. What is the purpose of the "require" function in Node.js?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q5" value="a">To install external packages</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="b">To include modules in the application</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="c">To handle HTTP requests</li>
+                    <li class="quiz-option"><input type="radio" name="q5" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q6">
+                <p>6. Which of the following is a valid Rust variable binding?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q6" value="a">let x = "hello";</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="b">const y = 42;</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="c">var z = true;</li>
+                    <li class="quiz-option"><input type="radio" name="q6" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q7">
+                <p>7. What is the purpose of the useState hook in React?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q7" value="a">To fetch data from an API</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="b">To manage state in functional components</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="c">To handle routing in React applications</li>
+                    <li class="quiz-option"><input type="radio" name="q7" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q8">
+                <p>8. What is the purpose of SQL in the context of databases?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q8" value="a">To define the structure of a web page</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="b">To query and manipulate data in relational databases</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="c">To handle asynchronous operations in Node.js</li>
+                    <li class="quiz-option"><input type="radio" name="q8" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q9">
+                <p>9. What does the term "Normalization" refer to in the context of databases?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q9" value="a">Reducing data redundancy and dependency</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="b">Increasing the size of a database</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="c">Encrypting database connections</li>
+                    <li class="quiz-option"><input type="radio" name="q9" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q10">
+                <p>10. Which type of database is known for its schema-less design?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q10" value="a">Relational database</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="b">NoSQL database</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="c">In-memory database</li>
+                    <li class="quiz-option"><input type="radio" name="q10" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q11">
+                <p>11. What is the purpose of npm in Node.js?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q11" value="a">Node Package Middleware - to create middleware for Express</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="b">Node Package Manager - to install and manage packages</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="c">Node Programming Module - to write server-side logic</li>
+                    <li class="quiz-option"><input type="radio" name="q11" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q12">
+                <p>12. In React, what is the purpose of the useEffect hook?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q12" value="a">To create a new component</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="b">To manage side effects in functional components</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="c">To handle routing in React applications</li>
+                    <li class="quiz-option"><input type="radio" name="q12" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q13">
+                <p>13. In Rust, what is the purpose of the borrow checker?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q13" value="a">To manage memory and prevent data races</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="b">To check the syntax of the code</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="c">To execute JavaScript code</li>
+                    <li class="quiz-option"><input type="radio" name="q13" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q14">
+                <p>14. What is the purpose of the "require" function in Node.js?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q14" value="a">To install external packages</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="b">To include modules in the application</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="c">To handle HTTP requests</li>
+                    <li class="quiz-option"><input type="radio" name="q14" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q15">
+                <p>15. What is the purpose of the virtual DOM in React?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q15" value="a">To directly manipulate the HTML DOM</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="b">To improve performance by minimizing DOM manipulations</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="c">To handle server-side rendering</li>
+                    <li class="quiz-option"><input type="radio" name="q15" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q16">
+                <p>16. What is the primary purpose of databases in applications?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q16" value="a">Store data temporarily in memory</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="b">Ensure data persistence beyond server stops</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="c">Execute JavaScript code</li>
+                    <li class="quiz-option"><input type="radio" name="q16" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q17">
+                <p>17. What is the purpose of npm in Node.js?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q17" value="a">Node Package Middleware - to create middleware for Express</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="b">Node Package Manager - to install and manage packages</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="c">Node Programming Module - to write server-side logic</li>
+                    <li class="quiz-option"><input type="radio" name="q17" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q18">
+                <p>18. What is the purpose of the "useState" hook in React?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q18" value="a">To fetch data from an API</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="b">To manage state in functional components</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="c">To handle routing in React applications</li>
+                    <li class="quiz-option"><input type="radio" name="q18" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q19">
+                <p>19. What is the purpose of the "cargo" command in Rust?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q19" value="a">To handle HTTP requests</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="b">To manage Rust packages and build projects</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="c">To define the structure of a web page</li>
+                    <li class="quiz-option"><input type="radio" name="q19" value="d">None of the above</li>
+                </ul>
+            </div>
+
+            <div class="quiz-question" id="q20">
+                <p>20. What is the purpose of the "async" keyword in Node.js?</p>
+
+                <ul class="quiz-options radio-group">
+                    <li class="quiz-option"><input type="radio" name="q20" value="a">To manage asynchronous operations and callbacks</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="b">To define a new class in JavaScript</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="c">To create a new database schema</li>
+                    <li class="quiz-option"><input type="radio" name="q20" value="d">None of the above</li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="result-container">
+        <button id="submit-btn" onclick="calculateScore()">Submit Answers</button>
+        <p id="result"></p>
+        @* <a id="certif" style="display: none;" asp-action="GetCertificate">Certifcate</a> *@
+    </div>
+
+    <script>
+        function calculateScore() {
+            // Array of correct answers
+            const correctAnswers = ["b", "a", "a", "b", "b", "a", "b", "b", "b", "b", "a", "b", "b", "a", "b", "b", "b", "a", "b", "a"];
+            // Get all radio groups
+            const radioGroups = document.querySelectorAll('.radio-group');
+
+            let score = 0;
+
+            // Loop through each radio group
+            radioGroups.forEach((group, index) => {
+                // Get the selected answer
+                const selectedAnswer = group.querySelector('input:checked');
+
+                // Check if an answer is selected
+                if (selectedAnswer) {
+                    // Check if the selected answer is correct
+                    if (selectedAnswer.value === correctAnswers[index]) {
+                        score++;
+                        // Highlight correct choice in green
+                        selectedAnswer.parentNode.classList.add('correct-answer');
+                    } else {
+                        // Highlight incorrect choice in red
+                        selectedAnswer.parentNode.classList.add('incorrect-answer');
+
+                        // Find and highlight the correct choice in green
+                        const correctChoice = group.querySelector(`input[value="${correctAnswers[index]}"]`);
+                        if (correctChoice) {
+                            correctChoice.parentNode.classList.add('correct-answer');
+                        }
+                    }
+                }
+            });
+
+            // Display the result
+            document.getElementById('result').innerText = `You scored ${score} out of ${correctAnswers.length}!`;
+            /*if score > 13{
+                var link = document.getElementById('certif');
+                link.style.display = 'block';
+                link.classList.add('active');
+            }*/
+        }
+    </script>
+
+</main>

@@ -1,0 +1,128 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+<head>
+    <style>
+        #main {
+            width: 85vw;
+            padding: 0;
+            margin-left: 15vw;
+        }
+
+        .course-item img {
+            width: 270px;
+            height: 148px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+
+
+<main id="main" data-aos="fade-in">
+<section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row" data-aos="zoom-in" data-aos-delay="100">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                <div class="course-item">
+                    <img src="~/Content/assets/img/rust.jpg" class="img-fluid" alt="...">
+                    <div class="course-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4>Web design advanced</h4>
+
+                        </div>
+
+                        <h3><a class="nav-link text-dark" asp-area="Identity" asp-controller="SubCourse" asp-action="Rust">Rust</a></h3>
+                        <p>What is rust programming?</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+
+                            <div class="trainer-rank d-flex align-items-center">
+                                <i class="bx bx-user"></i>&nbsp;50
+                                &nbsp;&nbsp;
+                                <i class="bx bx-heart"></i>&nbsp;65
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+            </br>
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
+                <div class="course-item">
+                    <img src="~/Content/assets/img/node.jpg" class="img-fluid" alt="...">
+                    <div class="course-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4>Web design advanced</h4>
+
+                        </div>
+
+                        <h3><a class="nav-link text-dark" asp-area="Identity" asp-controller="SubCourse" asp-action="Node">NodeJS</a></h3>
+                        <p>The ABCs of node programming language</p>
+                        <div class="trainer d-flex justify-content-between align-items-center">
+
+                            <div class="trainer-rank d-flex align-items-center">
+                                <i class="bx bx-user"></i>&nbsp;35
+                                &nbsp;&nbsp;
+                                <i class="bx bx-heart"></i>&nbsp;42
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- End Course Item-->
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="course-item">
+                            <img src="~/Content/assets/img/react.png" class="img-fluid" alt="...">
+                            <div class="course-content">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4>Web design advanced</h4>
+
+                                </div>
+
+                                <h3><a class="nav-link text-dark" asp-area="Identity" asp-controller="SubCourse" asp-action="React">React</a></h3>
+                                <p>The basics of react to kick start your journey</p>
+                                <div class="trainer d-flex justify-content-between align-items-center">
+
+                                    <div class="trainer-rank d-flex align-items-center">
+                                        <i class="bx bx-user"></i>&nbsp;20
+                                        &nbsp;&nbsp;
+                                        <i class="bx bx-heart"></i>&nbsp;85
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
+                        <div class="course-item">
+                            <img src="~/Content/assets/img/quiz1.jpg" class="img-fluid" alt="...">
+                            <div class="course-content">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <h4>Web design advanced</h4>
+
+                                </div>
+
+                                <h3><a class="nav-link text-dark" asp-area="Identity" asp-controller="Course" asp-action="Webdevadvquiz">Quiz</a></h3>
+                                <p>Final course quiz</p>
+                                <div class="trainer d-flex justify-content-between align-items-center">
+
+                                    <div class="trainer-rank d-flex align-items-center">
+                                        <i class="bx bx-user"></i>&nbsp;20
+                                        &nbsp;&nbsp;
+                                        <i class="bx bx-heart"></i>&nbsp;85
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+        </section><!-- End Courses Section -->
+
+    </main><!-- End #main -->
+</body>

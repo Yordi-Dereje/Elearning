@@ -1,0 +1,79 @@
+﻿@model E_LearningWebApp.Areas.Identity.Data.E_LearningWebAppUser;
+@{
+    Layout = "UserLayout";
+
+}
+
+
+@* <h2>Username: @Model.UserName</h2>
+<h2>FirstName: @Model.FirstName</h2>
+<h2>LastName: @Model.LastName</h2>
+ *@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+    <style>
+        .profile{
+            padding-left: 15vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+
+    <h1>Profile</h1>
+    <hr />
+    <div class="row">
+          <div class="col-md-4">
+            <form asp-controller="User" asp-action="Profile">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+               
+                <div class="form-group">
+                    <label asp-for="FirstName" class="control-label">First Name</label>
+                    <input asp-for="FirstName" class="form-control" />
+                    <span asp-validation-for="FirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastName" class="control-label">Last Name</label>
+                    <input asp-for="LastName" class="form-control" />
+                    <span asp-validation-for="LastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label">Phone Number</label>
+                    <input asp-for="PhoneNumber" class="form-control" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label">Email Address/Username</label>
+                    <input asp-for="UserName" class="form-control" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+              
+
+                </br>
+                <div class="form-group">
+                    <input type="submit" value="Update" asp-asp-controller="User" asp-action="Profile" asp-route-userid="@Model.Id" class="btn btn-primary" style="background-color: green" />
+                </div>
+                @* <a asp-action="Index">Back to List</a> *@
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

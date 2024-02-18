@@ -1,0 +1,138 @@
+﻿@using E_LearningWebApp.Areas.Identity.Data;
+@using Microsoft.AspNetCore.Identity;
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+@inject UserManager<E_LearningWebAppUser> UserManager
+
+<main>
+    <div id="partitions">
+
+        <div class="partition">
+            <h2>Introduction to JavaScript</h2>
+            <iframe width="656" height="369" src="https://www.youtube.com/embed/vZBCTc9zHtI" title="Javascript Tutorial - Programming Tutorial for Beginners Pt 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p>JavaScript is a versatile programming language that empowers web development. In this module, you will learn:</p>
+
+            <ul>
+                <li><strong>History of JavaScript:</strong> Understand the origins and evolution of JavaScript.</li>
+                <li><strong>Setting Up Development Environment:</strong> Configure your environment for JavaScript development.</li>
+                <li><strong>Basic Syntax:</strong> Explore the fundamental syntax and structure of JavaScript code.</li>
+                <li><strong>Data Types:</strong> Learn about various data types like strings, numbers, and booleans.</li>
+                <li><strong>Variables and Constants:</strong> Understand how to declare and use variables and constants.</li>
+            </ul>
+        </div>
+
+        <div class="partition">
+            <h2>Control Flow and Functions</h2>
+            <p>Mastering control flow and functions is essential for effective JavaScript programming. In this module, you will cover:</p>
+
+            <ul>
+                <li><strong>Conditional Statements:</strong> Implement decision-making with if, else, and switch statements.</li>
+                <li><strong>Loops:</strong> Iterate through data using for, while, and do-while loops.</li>
+                <li><strong>Functions:</strong> Understand the concept of functions and how to define and call them.</li>
+                <li><strong>Scope and Closures:</strong> Dive into variable scope and closures for better code organization.</li>
+                <li><strong>Error Handling:</strong> Learn to handle errors using try, catch, and finally blocks.</li>
+            </ul>
+        </div>
+
+        <div class="partition">
+            <h2>Object-Oriented JavaScript</h2>
+            <p>JavaScript's object-oriented features allow for robust and scalable code. In this module, you will explore:</p>
+
+            <ul>
+                <li><strong>Objects and Properties:</strong> Create and manipulate objects with properties and methods.</li>
+                <li><strong>Prototypes and Inheritance:</strong> Understand the prototype chain and inheritance in JavaScript.</li>
+                <li><strong>ES6 Classes:</strong> Explore the modern class syntax introduced in ECMAScript 2015.</li>
+                <li><strong>Modules:</strong> Organize code using modules for better maintainability.</li>
+                <li><strong>Asynchronous Programming:</strong> Dive into asynchronous concepts using callbacks, promises, and async/await.</li>
+            </ul>
+        </div>
+        <div class="partition">
+            <h2>Var, Let and const keywords</h2>
+            <iframe width="656" height="369" src="https://www.youtube.com/embed/sjyJBL5fkp8" title="var, let and const - What, why and how - ES6 JavaScript Features" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <!-- Control Flow and Loops -->
+
+        <div class="partition">
+            <h2>Control Flow and Loops</h2>
+            <p>Control flow statements, such as if-else and switch, provide the foundation for decision-making in JavaScript. They allow you to create logic that adapts to different scenarios. Loops, including for and while, are crucial for repetitive tasks, enabling you to iterate over data and perform actions efficiently. Understanding and mastering control flow and loops is essential for creating dynamic and responsive programs.</p>
+            <p>By effectively using control flow, you can design programs that respond intelligently to varying conditions, enhancing the flexibility of your code. Loops, on the other hand, are indispensable for iterating through arrays, objects, or any iterable structure, allowing you to process data systematically. Together, they form the backbone of logical operations in JavaScript programming.</p>
+            <p>Whether you are building simple scripts or complex applications, a solid grasp of control flow and loops empowers you to build robust, efficient, and scalable software solutions.</p>
+        </div>
+
+        <!-- Functions and Scope -->
+
+        <div class="partition">
+            <h2>Functions and Scope</h2>
+            <p>Functions in JavaScript serve as reusable blocks of code, enhancing code organization and maintainability. Understanding function scope is crucial for managing variables and avoiding unintended side effects. Dive into function declarations and expressions to harness the full power of JavaScript functions.</p>
+            <p>JavaScript's function scope ensures that variables defined within a function are not accessible outside of it, promoting encapsulation and reducing potential conflicts. Delve into advanced topics like closures, which enable functions to remember and access variables from their outer scope. Mastery of functions and scope provides a solid foundation for writing modular and efficient code.</p>
+            <p>With the ability to create and use functions effectively, you can design code that is easier to understand, debug, and extend. Explore the concept of closures to build more flexible and powerful functions that encapsulate behavior and data within a specific context.</p>
+        </div>
+
+        <!-- Objects and Arrays -->
+
+        <div class="partition">
+            <h2>Objects and Arrays</h2>
+            <p>Objects and arrays are fundamental data structures in JavaScript, offering versatile ways to organize and manipulate data. Objects store key-value pairs, providing a flexible way to represent entities and their properties. Arrays, on the other hand, offer ordered collections, enabling efficient storage and retrieval of data.</p>
+            <p>Delve into object-oriented programming (OOP) principles in JavaScript, where objects play a central role in modeling real-world entities. Learn about creating and manipulating objects, leveraging prototypes, and implementing inheritance. Arrays, with their dynamic nature, are powerful tools for working with lists of data, supporting operations like iteration, filtering, and mapping.</p>
+            <p>Mastery of objects and arrays is essential for effective data manipulation in JavaScript. Whether you are building data-driven applications, handling user input, or managing complex datasets, a solid understanding of these structures is key to writing efficient and maintainable code.</p>
+        </div>
+
+        <!-- DOM Manipulation -->
+
+        <div class="partition">
+            <h2>DOM Manipulation</h2>
+            <p>JavaScript empowers you to interact with the Document Object Model (DOM), enabling dynamic updates to web pages. Learn how to select DOM elements using queries, modify their content, and respond to user events for an interactive user experience. Understanding event delegation and employing efficient DOM manipulation techniques is crucial for building modern and responsive web applications.</p>
+            <p>With DOM manipulation skills, you can create web pages that respond dynamically to user interactions, providing a seamless and engaging experience. Explore techniques for handling user events, updating DOM elements, and efficiently managing the document structure. Event delegation, in particular, allows you to handle events on multiple elements with a single event listener, enhancing performance and maintainability.</p>
+            <p>As you delve into DOM manipulation, you'll gain the ability to build interactive and user-friendly web applications, making your websites more dynamic and responsive to user actions.</p>
+        </div>
+
+        <!-- AJAX and Fetch API -->
+
+        <div class="partition">
+            <h2>AJAX and Fetch API</h2>
+            <p>Asynchronous JavaScript and XML (AJAX) and the Fetch API enable you to make asynchronous requests to servers, facilitating the development of responsive and dynamic web applications. Understand the principles of asynchronous programming and how these technologies allow your web pages to communicate with servers without reloading. Learn about handling data in different formats, such as JSON, and efficiently updating your web page content based on server responses.</p>
+            <p>With AJAX and the Fetch API, you can create web applications that retrieve and send data in the background, providing a smoother user experience. Dive into the details of asynchronous operations, handling promises, and managing data flow between your front-end and server. Utilize these techniques to build modern web applications that interact seamlessly with server-side resources.</p>
+            <p>By mastering AJAX and the Fetch API, you'll enhance your ability to create dynamic and data-driven web applications, offering users a more interactive and responsive experience.</p>
+        </div>
+
+        <!-- ES6+ Features -->
+
+        <div class="partition">
+            <h2>ES6+ Features</h2>
+            <p>Explore the features introduced in ECMAScript 6 (ES6) and later versions, bringing significant enhancements to JavaScript syntax and functionality. Features like arrow functions, destructuring, and template literals enhance the readability and expressiveness of your code. Stay up-to-date with modern JavaScript practices, making your code more concise, readable, and efficient.</p>
+            <p>ES6 introduces a range of features that simplify common coding patterns, making it easier to express complex ideas in a concise manner. Dive into the world of arrow functions for more compact and expressive function syntax. Explore destructuring to extract values from arrays and objects with ease. Utilize template literals for more readable and dynamic string interpolation.</p>
+            <p>By incorporating ES6+ features into your code, you'll stay current with the latest JavaScript standards, making your codebase more modern, maintainable, and aligned with industry best practices.</p>
+            <iframe width="656" height="369" src="https://www.youtube.com/embed/NCwa_xi0Uuc" title="ES6 Tutorial: Learn Modern JavaScript in 1 Hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <!-- Closures and Promises -->
+
+        <div class="partition">
+            <h2>Closures and Promises</h2>
+            <p>Understand the powerful concepts of closures and promises in JavaScript. Closures allow you to manage scope effectively, creating private variables and functions. Explore how closures contribute to cleaner code organization and prevent unintended variable conflicts. Dive into promises as a cleaner and more structured way to handle asynchronous operations, improving code maintainability and readability.</p>
+            <p>Closures play a crucial role in managing scope, allowing functions to retain access to variables from their outer scope. Delve into practical examples where closures enhance code organization and encapsulation. Explore promises as a modern solution for handling asynchronous tasks, providing a more structured and readable alternative to traditional callback patterns.</p>
+            <p>With a solid understanding of closures and promises, you'll be equipped to write more maintainable, modular, and efficient JavaScript code, especially when dealing with asynchronous tasks and complex logic.</p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures" title="JavaScript Fundamentals" target="_blank">More about closures</a></p>
+        </div>
+
+        <div class="partition">
+            <h2>Resources</h2>
+            <p><a href="https://github.com/mbeaudru/modern-js-cheatsheet" title="Modern JS" target="_blank">Modern JS</a></p>
+            <p><a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics" title="JavaScript Fundamentals" target="_blank">JavaScript Fundamentals</a></p>
+            <p><a href="https://darrenderidder.github.io/talks/ModulePatterns/#/" title="Module patterns" target="_blank">Module patterns</a></p>
+            <p><a href="/rltoken/TiU5VUjQ4KD0oA4OCs3Zlg" title="Javascript Tutorial" target="_blank">Javascript Tutorial</a></p>
+            <p><a href="/rltoken/X_YgjEN6_0d85_neoa1kTw" title="JavaScript object basics" target="_blank">JavaScript object basics</a></p>
+            <p><a href="/rltoken/4LU54FWEMd-0YK5K8N8Xrw" title="Object-oriented JavaScript" target="_blank">Object-oriented JavaScript</a></p>
+            <p><a href="/rltoken/M-t1bDqKDRCW6fmfxUOFmQ" title="Object prototypes" target="_blank">Object prototypes</a></p>
+            <p><a href="/rltoken/XPe-Uhv1TCNzfK4YokWtqw" title="Inheritance in JavaScript" target="_blank">Inheritance in JavaScript</a></p>
+            <p><a href="/rltoken/PJuWX_vg8gV8GZ857IVJ0w" title="Closures" target="_blank">Closures</a></p>
+            <p><a href="/rltoken/p-2tz1dmmOLuCPULMZ3wYg" title="this/self" target="_blank">this/self</a></p>
+        </div>
+    </div>
+
+</main>

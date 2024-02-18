@@ -1,0 +1,236 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+
+    <title>Flowcharts</title>
+    <link rel="stylesheet" href="~/Content/css/courses.css">
+
+
+</head>
+<body>
+
+    @* <aside>
+        <img src="~/Content/logincss/logo.jpg" alt="">
+        <nav>
+            <a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#"><i class="fas fa-book"></i> Courses</a>
+            <a href="#"><i class="fas fa-chart-bar"></i> Grades</a>
+            <a href="#"><i class="fas fa-lightbulb"></i> Concepts</a>
+            <a href="#">
+                <i class="fas fa-chart-pie"></i>
+                Statistics
+            </a>
+
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </nav>
+
+    </aside>
+
+    <header>
+        <h2>Flowcharts</h2>
+        <div class="prof">
+            <a href="#"><i class="fas fa-user"></i> Yordanos</a>
+        </div>
+    </header>
+*@
+    <main> 
+
+        <div id="partitions">
+            <div class="partition">
+                <h2>What is a Flowchart?</h2>
+
+                <p>A flowchart is a type of diagram that visually represents a workflow or process using a set of symbols or icons to denote different actions/decisions/steps within the process with arrows showing the direction of the flow. Flowcharts are used across many different professions to help analyze, design, document, and/or manage a workflow or process.</p>
+
+            </div>
+
+            <div class="partition">
+                <h2>Why use a Flowchart?</h2>
+
+                <p>Similarly to pseudo-code, flowcharts provide another way of approaching and/or understanding a workflow. Another benefit is that, when done well, flowcharts can be understood by non-developers and by developers that do not know the language the process is written in.</p>
+            </div>
+
+            <div class="partition">
+                <h2>Flowchart Symbols</h2>
+                <p>This type of diagram is extremely versatile and is used across many professional fields. Due to the number of industries using flowcharts, many sets of symbols and styles have been created with a specific industry in mind. A good symbol set to use is the ISO 5807 symbol set, as they are well-known and often used in the technology industry. </p>
+
+                <h3>Some commonly used ISO 5807 symbols</h3>
+                <table class="hbtn-table">
+                    <tr>
+                        <th>Symbol</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/5bc2a924f79c536f50da.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f0e45e46fc61f53b554af3353860367ec59c544ebe210a197529146aaedbebcc" alt="" loading='lazy' style="" /></td>
+                        <td>Flowline / Arrowhead</td>
+                        <td>Shows the order. Comes from one symbol to another</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/63feb920c4666f09326a.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7f8b21cca0f8b6a7150043e1b1a4efd74090a0dddb4a02ea0a1219aca5d33c08" alt="" loading='lazy' style="" /></td>
+                        <td>Terminal / Terminator</td>
+                        <td>Shows where a process (or sub-process) starts or ends; text is usually &ldquo;Start&rdquo;, &ldquo;Begin&rdquo;, or &ldquo;End&rdquo;</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/0c14df72f5d58bdccffa.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a46cb63860b9b10b44a8676da4edda7d709bae967b36b3116df474f1a39580e1" alt="" loading='lazy' style="" /></td>
+                        <td>Process / Rectangle</td>
+                        <td>Process, action step, or operation; text is usually a verb, examples include:  “Edit Video”, “Choose Plan”, “Set variable to ‘hello’”</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/61cb6f6432e289663024.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8da6f2bdb3d185d7f48d88d8ae0d4c6eb8165c9ce27efde4e980c8ada02de623" alt="" loading='lazy' style="" /></td>
+                        <td>Data (I/O)</td>
+                        <td>Inputs to (entering data) and Outputs from (displaying results) a process</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/8d6224b7a302d4aea92f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=f4cfb477058336f6265c79d1a67b6d2146b09573185347b31e5e1157b8d2560a" alt="" loading='lazy' style="" /></td>
+                        <td>Decision / Conditional</td>
+                        <td>Used to ask a question whose answer determines the route taken from the question. Arrow from bottom is Yes / True, Arrow from side(s) is No / False, (Always label the arrows to make it clear)</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/d6a5c9521182bd1db22b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ad32d8e6386338c751a2b7d81c1e899d9aa6f5af178378e516c9708087e7b607" alt="" loading='lazy' style="" /></td>
+                        <td>Document (s)</td>
+                        <td>Represents a document or report</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/899ad233b3a3285af0b1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5d16a3fe535f338200ea257df7261bd5699ef90888e2431df539dd7d8c8aa3e6" alt="" loading='lazy' style="" /></td>
+                        <td>Subroutine / Predefined Process</td>
+                        <td>A process that can be used in the current process but defined elsewhere (should have a separate flowchart for it)</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/745f08c52be8f7686926.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=a7c654fc935a6dbeddbe332676e906f34a368254e53dcb7e54ec3c88df19c7e6" alt="" loading='lazy' style="" /></td>
+                        <td>Annotation (Comment)</td>
+                        <td>Additional info about a step; the line connecting to the step can be solid or dashed</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/b0ed5e74d8e279c15819.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=20d13ae3805241b8c5ae0546f1e32fa2b3e3d1f5fbb25f98a06aaa8a88eec681" alt="" loading='lazy' style="" /></td>
+                        <td>On-page Connector</td>
+                        <td>Replaces long or confusing lines, use a letter to reference</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/0619bb11497a0bfb4f35.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0b63e9df5223e894343fedc34799bf50264c44140ea51ee7a585c32a449e3270" alt="" loading='lazy' style="" /></td>
+                        <td>Off-page Connector</td>
+                        <td>To connect this process to the next step, which is on another page; use page number for reference</td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/78884262285c367ee630.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8da47f917d114ddfd02cfb6c637214d7a2ae9bc27829bf6cc1942cebc09a0a75" alt="" loading='lazy' style="" /></td>
+                        <td>Data File / Database</td>
+                        <td>Data represented by a cylinder (originally representative of disk drive)</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="partition">
+                <h2>An Example</h2>
+
+                <p>Let’s think about Foundation task, and include a flowchart example for it: </p>
+
+                <p>The task instructions are as follows: </p>
+
+                <blockquote>
+                    <p>Write a function that draws a straight line in the terminal.</p>
+
+                    <ul>
+                        <li>Prototype: void print_line(int n);</li>
+                        <li>You can only use <code>_putchar</code> function to print</li>
+                        <li>Where <code>n</code> is the number of times the character <code>_</code> should be printed</li>
+                        <li>The line should end with a <code>\n</code></li>
+                        <li>If <code>n</code> is 0 or less, the function should only print <code>\n</code></li>
+                    </ul>
+                </blockquote>
+
+                <p>Take a moment to write out a solution in pseudo-code. </p>
+
+                <p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    …
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    No, really. It’s good practice. :)
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    …
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    Okay. Below is what I came up with.
+                </p>
+
+                <ol>
+                    <li>Set a variable equal <code>n</code> (<code>int nCopy</code>)</li>
+                    <li>Set up a while loop (condition: <code>nCopy</code> is greater than 0)</li>
+                    <li>Print <code>-</code></li>
+                    <li>Decrease <code>nCopy</code> by 1</li>
+                    <li>
+                        Print <code>\n</code>
+                        <br>
+                        <br>
+                    </li>
+                </ol>
+
+                <p>
+                    Now, using the ISO 5807 symbols from the table above, draw out a flowchart for this function.
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    …
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    No peeking!
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    …
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </p>
+
+                <p>Alright, does your flowchart look similar to the diagram below?</p>
+
+                <p><img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2019/8/fb82e24f7282c569aed3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240203%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240203T192956Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=52c5ef7bbc99a38c5d54d148f14591c917e22a13f2c6bc2fbe8066543808dbb7" alt="" loading='lazy' style="" /></p>
+            </div>
+
+            <div class="partition">
+                <h2>Bonus Info</h2>
+
+                <p>Some good uses of flowcharts:</p>
+
+                <ul>
+                    <li>Create a flowchart before coding a task to either help create or validate pseudo-code</li>
+                    <li>Add to a README.md to visually show how your project/process works</li>
+                    <li>Use in a presentation to aide audience understanding</li>
+                    <li>Your function or process is not working as expected? Create a flowchart of how it CURRENTLY is. Then, walk through the chart with some example input. </li>
+                </ul>
+
+                <p>A flowchart can be as high-level or as detailed as you want. For example, you could break the flowchart above down further to include what is happening in memory. You can even create flowcharts from your everyday non-technical experiences. Choosing a movie or a place to eat could be displayed as a flow-chart! </p>
+
+                <p>A helpful tool to create flowcharts is <a href="https://intranet.alxswe.com/rltoken/aOmwlxIhyIzTDorIC5SNWA" title="draw.io" target="_blank">draw.io</a>. There are premade symbols for you to use and your diagrams can be saved to your Google Drive. </p>
+
+                <p>For more information on Flowcharts and related diagrams, a google search with simply “flowchart” can get you started. ;) </p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

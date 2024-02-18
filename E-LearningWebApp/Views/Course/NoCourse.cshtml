@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "UserLayout";
+}
+<head>
+    <style>
+        #main{
+            width: 85vw;
+            padding: 0;
+            margin-left: 15vw;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- ======= Header ======= -->
+
+
+    <main id="main" data-aos="fade-in">
+
+        <section id="courses" class="courses">
+            <div class="partitions">
+                <div class="partition">
+                    <h2>Current progress</h2>
+                    <p>No courses enrolled at the moment</p>
+                    <a class="a-links" asp-controller="Course" asp-action="Webdevbasics"><i class="fas fa-book"></i> Web basics</a>
+                    <a class="a-links" asp-controller="Course" asp-action="Webdevadv"><i class="fas fa-book"></i> Web adv</a>
+                    <a class="a-links" asp-controller="Course" asp-action="Codingbasics"><i class="fas fa-book"></i> Code basics</a>
+                    <a class="a-links" asp-controller="Course" asp-action="Marketing"><i class="fas fa-book"></i> Marketing</a>
+                    <a class="a-links" asp-controller="Course" asp-action="Leadership"><i class="fas fa-book"></i> Leadership</a>
+                    
+                </div>
+            </div>
+        </section><!-- End Courses Section -->
+
+    </main><!-- End #main -->
+</body>
